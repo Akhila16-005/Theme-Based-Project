@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Customer Main Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../css/formcss.css" rel="stylesheet">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/ajaxrequest.js"></script> 
+  <script src="../js/location.js"></script> 
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color:"black";
+  }
+  input {
+  		width:300px;
+  }
+      .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+      .descrption{
+          align:left;
+          padding:20px;
+      }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sid {
+        height:255px;
+        width: 255px;
+      }
+      .row.content {height:auto;} 
+    }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+      .left{
+          align-items: left;
+      }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+      .directions{
+          align:right;
+          padding:20px;
+      }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+      .checked {
+  color: orange;
+}
+  </style>
+    </head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">YatraSite</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="customerhome.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="customertrips.html">My Trips</a></li>
+        <li><a href="Transport.html">Transport</a></li>
+             <li><a id="logout">Logout</a></li>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+<div class="pan" style="display:flex">
+    <div class="left" style="padding:50px;width:750px">
+    <h2 ><p id="name">Name</p></h2>    
+    <img id="image" alt="Italian Trulli" width="555" height="355">
+    </div>
+  <div class="directions" style='margin-top:75px'>
+        <h2>Directions</h2><br>
+        <div id="directions" class="directions"></div>
+        <h2>Ticker Price:<span id="ticketprice">50 Rs</span></h2>
+    <h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span><br><br>
+<button type="button" style="width:300px" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Buy Ticket</button>
+    </div>
+    </div>
+      
+
+    
+    <div id="description" class="description" style="text-align:left"> 
+      <h1>History</h1>
+      <p id="history"> History </p>
+      <hr>
+      <h3>Test</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Buy Ticket</h4>
+        </div>
+        <div class="modal-body">
+           <form class="form-style-1">
+           		<label for="tripDate" >Date:</label>
+           		<input type="date" id="tripDate" name="tripDate"/></br>
+           		<label for="noOfCustomers" >Number Of Visitors:</label>
+           		<input type="number" id="noOfCustomers" name="noOfCustomers" onfocusout="updateTotal()"/></br>
+           		<label for="price" >Total in Rs:</label>
+           		<p  id="price" name="price"/>0</p>
+           		<label for="pickupLocation" >Pickup Point:</label>
+           		<select id="pickupLocation" name="pickupLocation">
+				  <option value="Dilsukhnagar">Dilsukhnagar</option>
+				  <option value="Kukatpally">Kukatpally</option>
+				  <option value="Secunderabad">Secunderabad</option>
+				  <option value="Mehidipatnam">Mehidipatnam</option>
+				  <option value="Lakidikapool">Lakidikapool</option>
+				  <option value="Abids">Abids</option>
+				  <option value="MGBS">MGBS</option>
+				  <option value="Ameerpet">Ameerpet</option>
+				  <option value="Himayathnagar">Himayathnagar</option>
+				  <option value="Rajiv Gandhi Airport">Rajiv Gandhi Airport</option>
+				  <option value="Tarnaka">Tarnaka</option>
+				  <option value="Uppal">Uppal</option>
+				</select>
+           		<label for="dropLocation" >Drop Point:</label>
+           		<select id="dropLocation" name="dropLocation">
+				  <option value="Dilsukhnagar">Dilsukhnagar</option>
+				  <option value="Kukatpally">Kukatpally</option>
+				  <option value="Secunderabad">Secunderabad</option>
+				  <option value="Mehidipatnam">Mehidipatnam</option>
+				  <option value="Lakidikapool">Lakidikapool</option>
+				  <option value="Abids">Abids</option>
+				  <option value="MGBS">MGBS</option>
+				  <option value="Ameerpet">Ameerpet</option>
+				  <option value="Himayathnagar">Himayathnagar</option>
+				  <option value="Rajiv Gandhi Airport">Rajiv Gandhi Airport</option>
+				  <option value="Tarnaka">Tarnaka</option>
+				  <option value="Uppal">Uppal</option>
+				</select>
+   		   </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="buyticket" class="btn btn-default" >Buy</button>	
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>   
+    
+ 
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/switch.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="../js/jquery.min.js"></script>
+  <script src="../js/ajaxrequest.js"></script> 
+  <script src="../js/guidehome.js"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: black;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: rgba(0,0,0,0.9); /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+.checked {
+  color: orange;
+}
+      a :focus{
+          color: black;
+      }
+  </style>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">YatraSite</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<h3 style="margin-left:20px;" id="username"></h3><br>
+<center><h4>Customer Info</h4>
+     <table style="margin-left:30px;width:90vw" class="table table-striped"  >
+  	  <tr>
+  	  	<td>Employee Id</td><td id="empId"></td>
+  	  </tr>
+	  <tr>
+	  	<td>Location Name</td><td id="locName"></td>
+	  </tr>
+	  <tr>
+	  	<td>No. of Completed Trips</td><td id="finishedTrips"></td>
+	  </tr>
+	  <tr>
+	  	<td>No. of Active Trips</td><td id="activeTrips"></td>
+	  </tr> 
+	  <tr>
+	  	<td>No. of Trips Cancelled</td><td id="canceledTrips"></td>
+	  </tr> 
+	   <tr>
+	  	<td>Money Earned</td><td id="amount"></td>
+	  </tr> 
+  </table>
+  </center>
+    <div class="container-fluid text-center" style="height:80vh">
+ <center>
+  <h4>Previous Trips</h4>
+ 
+  <table class="table table-hover" style="margin-left:30px;width:90vw"  >
+    <thead >
+      <tr>
+        <th>Customer Name</th>
+        <th>Location</th>
+        <th>Pickup Point</th>
+         <th>Drop Point</th>
+        <th>Date Of Trip</th>
+         <th>Trip Status(Active/Completed)</th>
+      </tr>
+    </thead>
+    <tbody id="tbodyid">
+      
+    </tbody>
+  </table>
+  </center>
+</div>
+</body>
+</html>

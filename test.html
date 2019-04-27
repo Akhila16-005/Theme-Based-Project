@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</script>
+<script>
+window.onload = function() {
+  var url='guides/1'
+  function rest(method, url, content, callback, error_callback){
+		$.ajax({
+			method: method,
+			url: "http://localhost:8080/"+url,
+			data: JSON.stringify(content),
+			contentType: 'application/json',
+			processData: false,
+			dataType: 'text',
+			headers:{'Access-Control-Allow-Origin' : "http://localhost:8080"},
+			success: function(response, textStatus, jqxhr){
+				if(response!=null && IsJson(response)){
+					if (!CheckException(response, jqxhr, error_callback)){
+						if(callback)
+							callback(response);
+					}
+				}
+				else{
+					alert("json parse Exception");
+				}
+			},
+			error: function(jqxhr, textStatus, errorMessage){
+				if (error_callback) {
+					var err = {message: errorMessage};
+					if (!err.message) err.message = jqxhr.status + ' ' + jqxhr.statusText;
+					error_callback(err, jqxhr.status);
+				}
+				else if (jqxhr.status === 0) {
+					if (url.indexOf("/bp/nav/dummy") < 0)
+						alert("Unable to connect to: " + url);
+				}
+				else
+					alert(jqxhr.status + ' ' + jqxhr.statusText);
+			}
+		});
+	}
+ function CheckException(response, jqxhr, error_callback){
+	if (jqxhr.status == 205){
+		var that=this;
+		alert("Your login session has expired.  Please login again.");
+		return true;
+	}
+	else if (jqxhr.status == 202 || jqxhr.status == 206){
+		if (error_callback) 
+			error_callback(response, jqxhr.status);
+		else if (response.message)
+			alert(response.message);
+		else
+			alert(jqxhr.status + ' ' + jqxhr.statusText);
+		return true;
+	}
+	return false;
+}
+ 
+ function IsJson(myString) {
+	    try {
+	        JSON.parse(myString);
+	    } 
+	    catch (err) {
+	        return false;
+	    }
+	    return true;
+	}
+var postdata=undefined;
+ rest('GET',url,postdata,function(response){
+	
+ });
+}
+
+</script>
+
+</body>
+</html>

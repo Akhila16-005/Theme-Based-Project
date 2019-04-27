@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Customer Main Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="../css/formcss.css" rel="stylesheet">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/ajaxrequest.js"></script> 
+  <script src="../js/guideregister.js"></script> 
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {color:whitesmoke;font-size: 16px;}
+  h2{color:whitesmoke;}
+  b {color: whitesmoke}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: rgba(0,0,0,0.5); /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+    input{
+  	color:black;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">YatraSite</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="guideregister.html">Register</a></li>
+        <li><a href="guidelogin.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+
+    
+<div class="form" style="background-color: rgba(0,0,0,0.9);color: white">
+                    
+<script type="text/javascript">
+function ValidateForm(frm) {
+if (frm.First_Name.value == "") {alert('First name is required.');frm.First_Name.focus();return false;}
+if (frm.Last_Name.value == "") {alert('Last name is required.');frm.Last_Name.focus();return false;}
+if (frm.Email_Address.value == "") {alert('Email address is required.');frm.Email_Address.focus();return false;}
+if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) {alert('Please enter a valid email address.');frm.Email_Address.focus();return false;}
+if (frm.languages.value == "") {alert('languages is required.');frm.Position.focus();return false;}
+if (frm.Phone.value == "") {alert('Phone is required.');frm.Phone.focus();return false;}
+if (frm.skip_CaptchaCode.value == "") {alert('Enter security code.');frm.skip_CaptchaCode.focus();return false;}
+return true; }
+function ReloadCaptchaImage(captchaImageId) {
+var obj = document.getElementById(captchaImageId);
+var src = '' + obj.src;
+obj.src = '';
+var date = new Date();
+var pos = src.indexOf('&rad=');
+if (pos >= 0) { src = src.substr(0, pos); }
+obj.src = src + '&rad=' + date.getTime();
+return false; }
+</script>
+<hr />
+<form  style="color:black">
+<center>
+<p>Registration</p>
+<h2>Employment Application</h2>
+<table border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td style="width:50%">
+<b>First name *</b><br />
+<input name="firstName" type="text" maxlength="50" style="width:260px" />
+</td>
+<td style="width:50%">
+<b>Last name *</b><br />
+<input name="lastName" type="text" maxlength="50" style="width:260px" />
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Email id</b><br />
+<input name="email" type="text" maxlength="100" style="width:535px" />
+</td>
+</tr>
+<tr>
+	<td>
+       <b>Location <span class="required">*</span></b><br/>
+        <select name="locationId" id="locationId" class="field-long" />
+    </td>
+<tr>
+<td colspan="2">
+<b>Languages Known</b><br />
+<input type="text" name="languages">
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<b>Phone *</b><br />
+<input name="phone" type="text" maxlength="50" style="width:260px" />
+</td>
+    <tr>
+<td style="width:50%">
+<b>Username</b><br />
+<input name="userId" type="text" maxlength="50" style="width:260px" />
+</td>
+    </tr>
+<tr>
+<td style="width:50%">
+<b>Password</b><br />
+<input name="password" type="password" maxlength="50" style="width:260px" />
+</td>
+<td style="width:50%">
+<b>Confirm Password</b><br />
+<input name="confirmpassword" type="confirmpassword" maxlength="50" style="width:260px" />
+</td>
+
+</tr>
+<tr>
+<td colspan="2">
+<b>Address</b><br />
+<textarea name="Address" rows="7" cols="40" style="width:535px"></textarea>
+</td>
+</tr>
+</table>
+<br /><br />
+
+    
+					<input type="button" id="submit" value="SIGNUP" >
+    </div>
+    </center>
+				</form>
+        
+				
+		
+</body>
+</html>
